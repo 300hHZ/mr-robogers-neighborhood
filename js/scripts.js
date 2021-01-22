@@ -1,5 +1,5 @@
 /*Wooj self-notes/thoughts:
-huh. i thought i would have to parseInt before the submit function would work properly (thought it would break the for loop on line 11), but it works just fine without it. I wonder why.
+How does this program handle decimals?
 */
 
 // Business Logic
@@ -15,12 +15,12 @@ function roboger(number)
     {
       if(numToString.includes(j.toString()))
       {
-        answer.push(messages[j-1]);
+        answer.push(" " + messages[j-1]);
         break;
       }
     }
 
-    if(answer.length < (i+1)){ answer.push(i); }
+    if (answer.length < (i+1)) { answer.push(" " + i); }
   }
   return answer;
 
@@ -31,6 +31,13 @@ function roboger(number)
 $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
-    $("#output").text(roboger($("#number").val()));
+    const input = parseInt($("#number").val());
+    if(isNaN(input) || input < 0)
+    {
+      alert("Invalid input detected. Please enter a non-negative integer.");
+    }
+    else{
+      $("#output").text(roboger(input));
+    }
   });
 });
