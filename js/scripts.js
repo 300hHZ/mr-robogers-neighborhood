@@ -1,5 +1,5 @@
 /*Wooj self-notes/thoughts:
-Wanted to scale loading gif to be bigger, but it keeps hiding the loading text, and I can't figure out how to make it not :(
+Discovered a bug that submission would still work if input contained both numbers and letters. Made use of a RegExp object and .test to fix big.
 */
 
 // Business Logic
@@ -51,7 +51,7 @@ $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
     const input = $("#number").val();
-    const nonnumber = new RegExp(/\D/); //used to test if string contains number and letters
+    const nonnumber = new RegExp(/\D/); 
     //calculation transition
     $(".answer").hide();
     $("#calculating").fadeIn();
@@ -59,8 +59,13 @@ $(document).ready(function(){
     
     if (isNaN(parseInt(input)) || nonnumber.test(input) || parseInt(input < 0))
       {
-        setTimeout(function(){alert("Uh oh. You made Mr. Roboger mad. Please enter a non-negative integer.");},2000);
+        $("#angryRobo").delay(3000).fadeIn();
+        $("#form").delay(3600).fadeOut();
+        setTimeout(function () { alert("Uh oh. You made Mr. Roboger mad. Please enter a non-negative integer."); }, 4000);
+        $("#angryRobo").delay(1000).fadeOut();
+        $("#form").delay(400).fadeIn();
       }
+
     else{
       $(".output").text(roboger(parseInt(input)));
       $(".answer").delay(3000).fadeIn();
