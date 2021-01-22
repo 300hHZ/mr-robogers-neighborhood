@@ -1,8 +1,5 @@
-/*Wooj self-notes/thoughts: 
-Should this include negative numbers?
-Problem with this solution is it'll run all 3 interations of 2nd for loop every time there isn't 1-3 in current number
-After running test cases, there isn't a whole lot of cases where this happens, so I guess it's not that big of a deal
-Especially with large number inputs.
+/*Wooj self-notes/thoughts:
+huh. i thought i would have to parseInt before the submit function would work properly (thought it would break the for loop on line 11), but it works just fine without it. I wonder why.
 */
 
 // Business Logic
@@ -30,3 +27,10 @@ function roboger(number)
 }
 
 // User Interface Logic
+
+$(document).ready(function(){
+  $("#form").submit(function(event){
+    event.preventDefault();
+    $("#output").text(roboger($("#number").val()));
+  });
+});
