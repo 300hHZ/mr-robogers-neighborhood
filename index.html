@@ -11,29 +11,32 @@
 </head>
 <body>
   <div class="container">
-    <div class="title">
-      <h1>Welcome to Mr. Roboger's Neighborhood!</h1><br>
-      <p><strong><em>NOT</em></strong> Mr. Robooger >:(</p>
+    <div id = "loading" class="pageCentered">
+      <img src="https://media0.giphy.com/media/l2QZVkuFCBXApK8Fi/giphy.gif?cid=ecf05e4797b08u7zaurtevh0x22tvbpccnqj97j4o9frqmvd&rid=giphy.gif" alt="loading...">
+      <h1>Loading...</h1>
     </div>
+    <div id="main">
+      <div id="title">
+        <h1>Welcome to Mr. Roboger's Neighborhood!</h1>
+        <p>( <strong><em>NOT</em></strong> Mr. Robooger 🤢😠 )</p>
+      </div>
 
-    <div class="row">
-      <form id="form">
-        <div class="form-group">
-          <label for="number">Please enter a number:</label>
-          <input id="number" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn btn-dark">Submit</button>
-      </form>
-    </div>
+      <div class="row">
+        <form id="form">
+          <div class="form-group">
+            <label for="number">Please enter a number:</label>
+            <input id="number" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+      </div>
 
-    <div class="row">
-      <div class="answer">
+      <div class="row" id="answer">
         <p>Your result is:<br>
           <span id="output"></span>
         </p>
       </div>
     </div>
-
   </div>
 </body>
 </html>
