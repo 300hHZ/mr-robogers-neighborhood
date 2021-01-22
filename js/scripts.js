@@ -8,7 +8,7 @@ function roboger(number)
   let answer = [];
   let numToString;
   const messages = ["Beep!","Boop!", "Won't you be my neighbor?"];
-  for(let index1 = 0; index1 <= number; i++)
+  for(let index1 = 0; index1 <= number; index1++)
   {
     numToString = index1.toString();
     for(let index2 = 3; index2 > 0; index2--)
@@ -25,9 +25,8 @@ function roboger(number)
   return answer;
 }
 
-function loadingTextAnimation(dot1,dot2,dot3,duration)
+function loadingTextAnimation(dot1,dot2,dot3)
 {
-  setTimeout(
     setInterval(function () {
       dot1.hide();
       dot2.hide();
@@ -36,7 +35,7 @@ function loadingTextAnimation(dot1,dot2,dot3,duration)
       dot2.delay(600).fadeIn(0);
       dot3.delay(900).fadeIn(0);
     }
-    ,1200),duration);
+    ,1200);
 
 }
 
@@ -44,20 +43,27 @@ function loadingTextAnimation(dot1,dot2,dot3,duration)
 
 $(document).ready(function(){
   //loading image and text w/ animation
-  loadingTextAnimation($("#firstDot"), $("#secondDot"),$("#thirdDot"), 4000);
-  $("#loading").delay(3000).fadeOut(1000);
-
+  loadingTextAnimation($(".firstDot"), $(".secondDot"),$(".thirdDot"), 4000);
   //transition to main content
+  $("#loading").delay(3000).fadeOut(1000);
   $("#main").delay(4000).fadeIn();
+  //submit button logic
   $("#form").submit(function(event){
     event.preventDefault();
-    const input = parseInt($("#number").val());
-    if(isNaN(input) || input < 0)
-    {
-      alert("Invalid input detected. Please enter a non-negative integer.");
-    }
+    const input = $("#number").val();
+    const nonnumber = new RegExp(/\D/); //used to test if string contains number and letters
+    //calculation transition
+    $(".answer").hide();
+    $("#calculating").fadeIn();
+    $("#calculating").delay(2000).fadeOut();
+    
+    if (isNaN(parseInt(input)) || nonnumber.test(input) || parseInt(input < 0))
+      {
+        setTimeout(function(){alert("Uh oh. You made Mr. Roboger mad. Please enter a non-negative integer.");},2000);
+      }
     else{
-      $("#output").text(roboger(input));
+      $(".output").text(roboger(parseInt(input)));
+      $(".answer").delay(3000).fadeIn();
     }
   });
 });

@@ -1,4 +1,4 @@
-# _Mr. Roboger's Neighorhood_
+# _Mr. Roboger's Neighborhood_
 
 #### _A program that takes a number input and returns array with numbers and messages._
 

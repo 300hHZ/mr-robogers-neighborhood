@@ -11,30 +11,42 @@
 </head>
 <body>
   <div class="container">
-    <div id = "loading" class="pageCentered">
+    <div id = "loading" class="centeredToPage">
       <img src="https://media0.giphy.com/media/l2QZVkuFCBXApK8Fi/giphy.gif?cid=ecf05e4797b08u7zaurtevh0x22tvbpccnqj97j4o9frqmvd&rid=giphy.gif" alt="Loading...">
-      <h1 id="loadingText">Loading<span id="firstDot">.</span><span id="secondDot">.</span><span id="thirdDot">.</span></h1>
+      <h1 id="loadingText">Loading<span class="firstDot">.</span><span class="secondDot">.</span><span class="thirdDot">.</span></h1>
     </div>
+
     <div id="main">
       <div id="title">
-        <h1>Welcome to Mr. Roboger's Neighborhood!</h1>
+        <h1>Welcome to:</h1><img src="img/roboger.jpg" alt="Roboger's Neighborhood">
         <p>( <strong><em>NOT</em></strong> Mr. Robooger 🤢😠 )</p>
       </div>
 
       <div class="row">
-        <form id="form">
-          <div class="form-group">
-            <label for="number">Please enter a number:</label>
-            <input id="number" class="form-control" type="text">
-          </div>
-          <button type="submit" class="btn btn-dark">Submit</button>
-        </form>
-      </div>
+        <div class="col-6">
+          <form id="form">
+            <div class="form-group">
+              <img src="https://static.wikia.nocookie.net/villains/images/e/e1/Mr._Robo_Rogers.png" class="icon" alt="Roboger icon"><label for="number">Mr. Roboger says: Please enter a non-negative number!</label>
+              <input id="number" class="form-control" type="text" placeholder="Non-negative number!">
+            </div>
 
-      <div class="row" id="answer">
-        <p>Your result is:<br>
-          <span id="output"></span>
-        </p>
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
+        </div>
+
+        <div class="col-6">
+          <div id="result">
+            <div id="calculating">
+              <img src="img/calculating.png"><p id="loadingText">Mr. Roboger is calculating<span class="firstDot">.</span><span class="secondDot">.</span><span
+                  class="thirdDot">.</span></p>
+            </div>
+            <div class="answer card">
+              <p>Mr. Roboger says:<br>
+              <span class="output"></span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
