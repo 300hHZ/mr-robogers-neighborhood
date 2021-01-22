@@ -23,7 +23,7 @@ function roboger(number)
       }
     }
 
-    if(answer.length < (i+1)){ answer.push(i);}
+    if(answer.length < (i+1)){ answer.push(i); }
   }
   return answer;
 
