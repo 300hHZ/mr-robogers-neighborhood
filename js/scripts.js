@@ -1,5 +1,5 @@
 /*Wooj self-notes/thoughts:
-How does this program handle decimals?
+Wanted to scale loading gif to be bigger, but it keeps hiding the loading text, and I can't figure out how to make it not :(
 */
 
 // Business Logic
@@ -23,13 +23,31 @@ function roboger(number)
     if (answer.length < (index1+1)) { answer.push(" " + index1); }
   }
   return answer;
+}
+
+function loadingTextAnimation(dot1,dot2,dot3,duration)
+{
+  setTimeout(
+    setInterval(function () {
+      dot1.hide();
+      dot2.hide();
+      dot3.hide();
+      dot1.delay(300).fadeIn(0);
+      dot2.delay(600).fadeIn(0);
+      dot3.delay(900).fadeIn(0);
+    }
+    ,1200),duration);
 
 }
 
 // User Interface Logic
 
 $(document).ready(function(){
+  //loading image and text w/ animation
+  loadingTextAnimation($("#firstDot"), $("#secondDot"),$("#thirdDot"), 4000);
   $("#loading").delay(3000).fadeOut(1000);
+
+  //transition to main content
   $("#main").delay(4000).fadeIn();
   $("#form").submit(function(event){
     event.preventDefault();
