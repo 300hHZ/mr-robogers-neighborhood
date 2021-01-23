@@ -54,7 +54,7 @@ $(document).ready(function(){
   // });
 
   //submit button logic
-  $("#form").submit(function(event){
+  $("#form button").click(function(event){
     event.preventDefault();
     const input = $("#number").val();
 
