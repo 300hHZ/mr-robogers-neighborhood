@@ -2,10 +2,6 @@ body{
   background-color: silver;
 }
 
-h1{
-  text-align: center;
-}
-
 #loading{
   width:auto;
   height:auto;
@@ -24,13 +20,13 @@ h1{
   transform: translate(-50%,-50%);
 }
 
+h1, #title, #calculating p{
+  text-align: center;
+}
+
 #main{
   display:none;
   
-}
-
-h1, #title, #calculating p{
-  text-align: center;
 }
 
 label{

@@ -1,6 +1,6 @@
 # _Mr. Roboger's Neighborhood_
 
-#### _A program that takes a number input and returns array with numbers and messages._
+#### _A program that takes a number input and displays an array with numbers and custom messages._
 
 #### By _**Woo Jin Kim**_
 
@@ -19,6 +19,26 @@
 * **Numbers containing a 2: Entire number replaced with "Boop!"**
 * **Numbers containing a 1: Entire number replaced with "Beep!"**
 
+### Extra features include:
+
+* Loading screen animation & transitions.
+* Separate transitions and results for valid and invalid submissions.
+* Optional name input.
+* A second button to perform the same operation, but reverse the resulting array output.
+
+## Setup/Installation Requirements
+
+* _Clone this repository to your desktop_
+* _Navigate to the top level of the directory_
+* _Open js/index.html_
+
+
+## Known Bugs
+
+* Not very scalable friendly.
+* Very basic layout styling.
+* Code could be refactored to be much more efficient.
+* Can't resize loading screen image without hiding loading text.
 
 ## Specs
 ```
@@ -58,24 +78,13 @@ Expect(roboger(32).toEqual([0, "Beep!", "Boop!", "Won't you be my neighbor?", 4,
 
 ```
 
-## Setup/Installation Requirements
-
-* _Clone this repository to your desktop_
-* _Navigate to the top level of the directory_
-* _Open js/index.html_
-
-
-## Known Bugs
-
-* _N/A_
-
-
 ## License
 
-_MIT_
+**_MIT_**
 
-Copyright (c) 2021 Woo Jin Kim
 
 ## Contact Information
 
-_Woo Jin Kim (kimwoojin211@gmail.com)_
+**_Woo Jin Kim (kimwoojin211@gmail.com)_**
+
+Copyright (c) 2021 Woo Jin Kim_
