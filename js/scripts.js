@@ -1,12 +1,13 @@
-/*Wooj self-notes/thoughts:
-*/
-
 // Business Logic
-function roboger(number)
+function roboger(number,name)
 {
   let answer = [];
   let numToString;
-  const messages = ["Beep!","Boop!", "Won't you be my neighbor?"];
+  let messages = ["Beep!","Boop!", "Won't you be my neighbor?"];
+  if(name)
+  {
+    messages[2] = messages[2].replace("?",", " + name + "?");
+  }
   for(let index1 = 0; index1 <= number; index1++)
   {
     numToString = index1.toString();
@@ -47,13 +48,7 @@ $(document).ready(function(){
   $("#loading").delay(3000).fadeOut(1000);
   $("#main").delay(4000).fadeIn();
 
-  // //determines if regular or reverse
-  // let buttonpressed;
-  // $('#form').click(function (event) {
-  //   buttonpressed = $(this).attr('name');
-  // });
-
-  //submit button logic
+  //button click logic
   $("#form button").click(function(event){
     event.preventDefault();
     const input = $("#number").val();
@@ -76,9 +71,9 @@ $(document).ready(function(){
     //valid input
     else{
       if($(this).attr("name")==="reverse")
-        $(".output").text(roboger(parseInt(input)).reverse());
+        $(".output").text(roboger(parseInt(input),$("#name").val()).reverse());
       else
-        $(".output").text(roboger(parseInt(input)));
+        $(".output").text(roboger(parseInt(input), $("#name").val()));
       $(".answer").delay(3000).fadeIn();
     }
   });
