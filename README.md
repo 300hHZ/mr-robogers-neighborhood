@@ -9,7 +9,8 @@
 * _HTML_
 * _CSS_
 * _Javascript_
-
+* _jQuery_
+* _Bootstrap_
 
 ## Description
 
@@ -35,6 +36,7 @@
 
 ## Known Bugs
 
+* Very large inputs (>10000) returns some unexpected elements in the output array
 * Not very scalable friendly.
 * Very basic layout styling.
 * Code could be refactored to be much more efficient.
